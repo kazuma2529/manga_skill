@@ -1,0 +1,94 @@
+comic_page:
+  language: "Japanese"
+  style: "japanese shoujo manga, emotional, slice of life"
+  writing-mode: "vertical-rl"
+  color_mode: "白黒"
+  aspect_ratio: "2:3"
+
+  instructions: |-
+    このYAMLは漫画ページの仕様です。添付の画像データ（キャラクター等、コマ割り画像）がある場合は、
+    それらを外見の基準として忠実に反映し、このプロンプトの指示に従ってページを生成してください。
+
+  layout_constraints: |-
+    - 読み順は panel.number の昇順
+    - 日本語縦書きマンガ、右から左に読む
+
+  character_infos:
+    - name: "キャラ名"
+      base_prompt: "girl, 25 years old, short hair, black hair, white t shirt, black pants"
+
+  panels:
+    - number: 1
+      page_position: "top"
+      bleed: ["top", "right"]
+      background: "背景の説明"
+      description: "コマ全体の説明"
+      objects:
+        - name: "オブジェクト名"
+      characters:
+        - name: "キャラ名"
+          panel_position: "center"
+          emotion: "自信に満ちた笑顔"
+          facing: "正面"
+          shot: "バストアップ"
+          pose: "両手を広げて堂々と"
+          scale: ""
+          description: ""
+          lines:
+            - text: "セリフのテキスト"
+              char_text_position: "right"
+              type: "speech"
+      effects: ["キラキラ効果"]
+      monologues:
+        - text: "ナレーションのテキスト"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "medium shot"
+
+    - number: 2
+      page_position: "middle"
+      bleed: []
+      background: "ぼかし背景"
+      description: "コマの説明"
+      objects: []
+      characters:
+        - name: "キャラ名"
+          panel_position: "center"
+          emotion: "しみじみ、懐かしむ"
+          facing: "斜め下"
+          shot: "顔アップ"
+          pose: "顎に手を当てて考える"
+          scale: ""
+          description: ""
+          lines:
+            - text: "セリフのテキスト"
+              char_text_position: "center"
+              type: "speech"
+      effects: []
+      monologues: []
+      camera_angle: "close-up"
+
+    - number: 3
+      page_position: "bottom"
+      bleed: ["bottom", "left", "right"]
+      background: "背景の説明"
+      description: "コマの説明"
+      objects:
+        - name: "建物"
+        - name: "木"
+      characters:
+        - name: "キャラ名"
+          panel_position: "center"
+          emotion: "不安"
+          facing: "背面"
+          shot: "ロングショット"
+          pose: "歩いている後ろ姿"
+          scale: "小さめ"
+          description: ""
+          lines: []
+      effects: []
+      monologues:
+        - text: "ナレーションのテキスト"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "wide shot"

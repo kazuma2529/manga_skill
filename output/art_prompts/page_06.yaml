@@ -1,0 +1,145 @@
+comic_page:
+  language: "Japanese"
+  style: "japanese seinen manga, emotional, comedic, travel essay"
+  writing-mode: "vertical-rl"
+  color_mode: "白黒"
+  aspect_ratio: "2:3"
+
+  instructions: |-
+    このYAMLは漫画ページの仕様です。添付の画像データ（キャラクター等、コマ割り画像）がある場合は、
+    それらを外見の基準として忠実に反映し、このプロンプトの指示に従ってページを生成してください。
+
+  layout_constraints: |-
+    - 読み順は panel.number の昇順
+    - 日本語縦書きマンガ、右から左に読む
+
+  character_infos:
+    - name: "いくま"
+      base_prompt: "japanese man, late 20s, slim body, short black hair, casual backpacker, t shirt, long pants, sneakers, slightly goofy, very expressive face"
+
+  panels:
+    - number: 1
+      page_position: "top"
+      bleed: []
+      background: "個室から一人ずつ人が出てくるトイレロビー。奥にはまだ続く行列。"
+      description: "個室から出てくる人と、それでも伸び続ける行列をロングショットで描く。"
+      objects:
+        - name: "トイレ個室ドア"
+        - name: "行列の人々"
+      characters:
+        - name: "いくま"
+          panel_position: "right"
+          emotion: "呆然としながら状況を見つめている"
+          facing: "左向き"
+          shot: "ロングショット"
+          pose: "列の端で立ち、行列の長さを目で追っている"
+          scale: "小さめ"
+          description: "やや俯瞰気味にして、列の長さとロビーの広さを強調する。"
+          lines: []
+      effects: []
+      monologues:
+        - text: "誰もが、この聖域の個室を狙っていた。"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "wide shot"
+
+    - number: 2
+      page_position: "top"
+      bleed: []
+      background: "行列の一部。若者や観光客、買い物客が退屈そうに並んでいる。"
+      description: "列の中の人々と、その奥にちらりと見える個室ドア。"
+      objects:
+        - name: "スマホをいじる若者"
+        - name: "買い物袋を持った客"
+      characters:
+        - name: "いくま"
+          panel_position: "left"
+          emotion: "自分だけ世界が違うような疎外感"
+          facing: "正面"
+          shot: "バストアップ"
+          pose: "列の最後尾を見つめるように立ち、口を半開きにしている"
+          scale: ""
+          description: "背景として、周囲の人々は落ち着いて待っているが、いくまだけ表情が死んでいる。"
+          lines: []
+      effects: []
+      monologues:
+        - text: "地元の若者、観光客、買い物客。清潔なトイレを求めているのは、僕だけではなかった。"
+          text_position: "top-left"
+          balloon_shape: "長方形"
+      camera_angle: "medium shot"
+
+    - number: 3
+      page_position: "middle"
+      bleed: []
+      background: "トイレ入り口付近。黄色いテープを貼ろうとする清掃員。"
+      description: "清掃員がテープを張る瞬間と、その様子を見るいくまをミドルショットで。"
+      objects:
+        - name: "黄色いテープ"
+        - name: "掃除用バケツ"
+      characters:
+        - name: "いくま"
+          panel_position: "right"
+          emotion: "状況を理解しきれない固まった表情"
+          facing: "左向き"
+          shot: "ミドルショット"
+          pose: "半歩前に出て、入り口を凝視している"
+          scale: ""
+          description: "やや画面端に寄せ、中央に清掃員の動きを入れる。"
+          lines: []
+      effects: []
+      monologues:
+        - text: "さらに清掃員が、『今から清掃に入るから30分待て』と叫ぶ。"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "medium shot"
+
+    - number: 4
+      page_position: "middle"
+      bleed: []
+      background: "トイレ入口の前に張られた黄色いテープが画面を横切る。"
+      description: "黄色いテープ越しに、ショックを受けるいくまの顔アップ。"
+      objects:
+        - name: "黄色いテープ"
+      characters:
+        - name: "いくま"
+          panel_position: "center"
+          emotion: "信じたくない現実に直面した表情"
+          facing: "正面"
+          shot: "顔アップ"
+          pose: "目を大きく見開き、口を震わせている"
+          scale: ""
+          description: "テープが顔の前を斜めに横切ることで、『立入禁止』感を視覚的に強調。"
+          lines:
+            - text: "待て……嘘だろ……？"
+              char_text_position: "right"
+              type: "speech"
+      effects:
+        - "ショック線"
+      monologues: []
+      camera_angle: "close-up"
+
+    - number: 5
+      page_position: "bottom"
+      bleed: []
+      background: "奥に完璧なトイレ個室の列、手前に黄色いテープとロビーの入口。"
+      description: "手前にテープといくま、奥に救済のような個室を配置した対比構図。"
+      objects:
+        - name: "トイレ個室の列"
+        - name: "黄色いテープ"
+      characters:
+        - name: "いくま"
+          panel_position: "right"
+          emotion: "絶望と諦めの入り混じった感情"
+          facing: "左向き"
+          shot: "ロングショット"
+          pose: "テープの手前に膝をつきかけの姿勢で立ち尽くす"
+          scale: "小さめ"
+          description: "体が今にも崩れ落ちそうな角度で、ギリギリこらえている。"
+          lines: []
+      effects:
+        - "遠くの個室にだけ柔らかいハイライト"
+      monologues:
+        - text: "完璧なトイレは、手を伸ばせば届く距離にあるのに——。"
+          text_position: "top-left"
+          balloon_shape: "長方形"
+      camera_angle: "wide shot"

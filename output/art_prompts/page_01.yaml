@@ -1,0 +1,150 @@
+comic_page:
+  language: "Japanese"
+  style: "japanese seinen manga, emotional, comedic, travel essay"
+  writing-mode: "vertical-rl"
+  color_mode: "白黒"
+  aspect_ratio: "2:3"
+
+  instructions: |-
+    このYAMLは漫画ページの仕様です。添付の画像データ（キャラクター等、コマ割り画像）がある場合は、
+    それらを外見の基準として忠実に反映し、このプロンプトの指示に従ってページを生成してください。
+
+  layout_constraints: |-
+    - 読み順は panel.number の昇順
+    - 日本語縦書きマンガ、右から左に読む
+
+  character_infos:
+    - name: "いくま"
+      base_prompt: "japanese man, late 20s, slim body, short black hair, casual backpacker, t shirt, long pants, sneakers, slightly goofy, very expressive face"
+
+  panels:
+    - number: 1
+      page_position: "top"
+      bleed: ["top"]
+      background: "バラナシの細い路地と寺院、牛、スパイス屋台、遠くまで続く雑踏"
+      description: "バラナシの混沌とした街並み全体を見せる導入カット。広い空間描写でスケール感を出す。"
+      objects:
+        - name: "寺院"
+        - name: "牛"
+        - name: "スパイス屋台"
+        - name: "オートリクシャ"
+      characters:
+        - name: "いくま"
+          panel_position: "right"
+          emotion: "圧倒されつつも高揚している"
+          facing: "背面"
+          shot: "ワイドショット"
+          pose: "バックパックを背負って立ち尽くし、前方の景色を見つめている"
+          scale: "小さめ"
+          description: "ページ右側手前に小さく配置し、広い街との対比でスケール感を出す。"
+          lines: []
+      effects:
+        - "クラクションの擬音『ピーピー』『ビーッ』"
+        - "遠景の砂埃"
+      monologues:
+        - text: "聖地バラナシ。スパイスの香りと牛の糞の臭い、そして鳴り止まないクラクションが、旅人の脳を揺さぶる。"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "wide shot"
+
+    - number: 2
+      page_position: "top"
+      bleed: []
+      background: "ぼかした路地の雑踏"
+      description: "バックパッカー気取りでキメ顔をするいくまのアップ。旅の高揚感と浮かれた様子を強調。"
+      objects: []
+      characters:
+        - name: "いくま"
+          panel_position: "center"
+          emotion: "ドヤ顔でテンションが高い"
+          facing: "正面"
+          shot: "バストアップ"
+          pose: "片手を腰に当て、もう片方の手を軽く広げて得意げに立つ"
+          scale: ""
+          description: "得意げな笑みとキラキラした目で、インド到着の高揚感を表現する。"
+          lines:
+            - text: "これぞインド。世界観が変わるぜ……"
+              char_text_position: "right"
+              type: "speech"
+      effects:
+        - "キラキラ効果"
+      monologues: []
+      camera_angle: "medium shot"
+
+    - number: 3
+      page_position: "middle"
+      bleed: []
+      background: "黒ベタ背景に集中線"
+      description: "下腹部に異変が走る瞬間を象徴的に見せるカット。"
+      objects: []
+      characters:
+        - name: "いくま"
+          panel_position: "center"
+          emotion: "突然の激痛に混乱している"
+          facing: "斜め"
+          shot: "極端なアップ"
+          pose: "両手で下腹部を押さえて前かがみになる"
+          scale: ""
+          description: "腰から太ももあたりを中心に、手で押さえる様子をクローズアップ。"
+          lines: []
+      effects:
+        - "集中線"
+        - "擬音『ギュルルル…』"
+      monologues:
+        - text: "突然、下腹部に“それ”は来た。"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "extreme close-up"
+
+    - number: 4
+      page_position: "middle"
+      bleed: []
+      background: "いくまの背後に、洗濯機の中で内臓がぐるぐる回るイメージ"
+      description: "腹痛の正体をコミカルかつ誇張されたイメージで表現するカット。"
+      objects:
+        - name: "洗濯機のイメージ"
+      characters:
+        - name: "いくま"
+          panel_position: "center"
+          emotion: "脂汗をかきながら必死にこらえている"
+          facing: "正面"
+          shot: "顔アップ"
+          pose: "歯を食いしばり目を見開き、肩をすくめて耐えている"
+          scale: ""
+          description: "額やこめかみに汗を浮かべ、緊張感とコミカルさを両立させる。"
+          lines: []
+      effects:
+        - "汗マーク"
+        - "背景のぐるぐるエフェクト"
+      monologues:
+        - text: "昨晩の『やけに安くて美味いカレー』が、腸内で反乱軍を組織し、一斉蜂起したのだ。"
+          text_position: "top-left"
+          balloon_shape: "長方形"
+      camera_angle: "close-up"
+
+    - number: 5
+      page_position: "bottom"
+      bleed: []
+      background: "路地がぐにゃりと歪んだような遠近感のある背景"
+      description: "世界が歪んで見えるほどの腹痛と焦りを表現するカット。"
+      objects: []
+      characters:
+        - name: "いくま"
+          panel_position: "center"
+          emotion: "顔面蒼白で強い危機感を感じている"
+          facing: "斜め"
+          shot: "バストアップ"
+          pose: "片手で腹を押さえ、もう片方の手で何かにつかまろうとしながら膝を震わせている"
+          scale: ""
+          description: "膝がガクガク震えている様子もフレーム内に収め、限界感を出す。"
+          lines:
+            - text: "……っ！？ ……まずい。これは、洒落にならないやつだ"
+              char_text_position: "right"
+              type: "speech"
+      effects:
+        - "震え線"
+      monologues:
+        - text: "インドの神々に祈る時間は終わった。今必要なのは、神ではなく——清潔な個室だ。"
+          text_position: "bottom-left"
+          balloon_shape: "長方形"
+      camera_angle: "medium shot"

@@ -1,0 +1,127 @@
+comic_page:
+  language: "Japanese"
+  style: "japanese seinen manga, emotional, comedic, travel essay"
+  writing-mode: "vertical-rl"
+  color_mode: "白黒"
+  aspect_ratio: "2:3"
+
+  instructions: |-
+    このYAMLは漫画ページの仕様です。添付の画像データ（キャラクター等、コマ割り画像）がある場合は、
+    それらを外見の基準として忠実に反映し、このプロンプトの指示に従ってページを生成してください。
+
+  layout_constraints: |-
+    - 読み順は panel.number の昇順
+    - 日本語縦書きマンガ、右から左に読む
+
+  character_infos:
+    - name: "いくま"
+      base_prompt: "japanese man, late 20s, slim body, short black hair, casual backpacker, t shirt, long pants, sneakers, slightly goofy, very expressive face"
+
+  panels:
+    - number: 1
+      page_position: "top"
+      bleed: []
+      background: "手元のスマホ画面に表示された地図アプリ、ぐちゃぐちゃに見えるルート"
+      description: "迷路のような路地に対して役に立たない地図アプリの俯瞰＋インサート。"
+      objects:
+        - name: "スマホ"
+      characters:
+        - name: "いくま"
+          panel_position: "bottom"
+          emotion: "焦りと苛立ち"
+          facing: "斜め下"
+          shot: "バストアップ"
+          pose: "スマホを片手に持ち、眉間にしわを寄せて画面を見つめる"
+          scale: ""
+          description: "画面側を大きく、顔はやや小さめにして『頼りない地図』感を強調。"
+          lines: []
+      effects:
+        - "小さな汗マーク"
+      monologues:
+        - text: "地図アプリも、震える指には追いつかない。"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "medium shot"
+
+    - number: 2
+      page_position: "top"
+      bleed: ["top"]
+      background: "ぼやけた街並みの中、遠くに『ショッピングモール』の看板文字だけが光る"
+      description: "主観視点で、遠くの看板だけがスポットライトのように浮かび上がる構図。"
+      objects:
+        - name: "ショッピングモールの看板"
+      characters: []
+      effects:
+        - "看板の周りの光のハイライト"
+      monologues: []
+      camera_angle: "wide shot"
+
+    - number: 3
+      page_position: "middle"
+      bleed: []
+      background: "近代的で巨大なショッピングモール外観、ガラス張りのファサード"
+      description: "モール全体と、それを見上げるいくまをロングで描く。"
+      objects:
+        - name: "ショッピングモールの建物"
+      characters:
+        - name: "いくま"
+          panel_position: "bottom"
+          emotion: "希望の光を見つけた表情"
+          facing: "斜め上"
+          shot: "ロングショット"
+          pose: "手前で少し前かがみになりつつ、建物を見上げている"
+          scale: "小さめ"
+          description: "建物の巨大さを強調するため、いくまはかなり小さく配置。"
+          lines:
+            - text: "……あそこなら……きっと……！"
+              char_text_position: "right"
+              type: "speech"
+      effects:
+        - "建物の周囲のハイライト線"
+      monologues:
+        - text: "不自然なほど近代的な建物が、砂漠のオアシスのようにそこにあった。"
+          text_position: "top-left"
+          balloon_shape: "長方形"
+      camera_angle: "wide shot"
+
+    - number: 4
+      page_position: "bottom"
+      bleed: []
+      background: "モール内部のエスカレーター、明るい照明と清潔なフロア"
+      description: "エスカレーターを数段飛ばしで駆け上がるいくまをミドルショットで。"
+      objects:
+        - name: "エスカレーター"
+      characters:
+        - name: "いくま"
+          panel_position: "center"
+          emotion: "最後の力を振り絞る必死さ"
+          facing: "斜め上"
+          shot: "ミドルショット"
+          pose: "段を飛ばしながら駆け上がり、体を前に倒して走っている"
+          scale: ""
+          description: "動きが分かるように足を大きく開いたポーズで描く。"
+          lines: []
+      effects:
+        - "走り線"
+      monologues:
+        - text: "最後の力を振り絞り、僕は駆け出した。"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "medium shot"
+
+    - number: 5
+      page_position: "bottom"
+      bleed: []
+      background: "3階フロア奥の『TOILET』サイン、自動ドア、光るタイル床が真正面に見える"
+      description: "主観視点で、奥にまっすぐ伸びる通路の先にトイレサインを配置。"
+      objects:
+        - name: "TOILETサイン"
+        - name: "自動ドア"
+      characters: []
+      effects:
+        - "トイレサイン周辺のハイライト"
+      monologues:
+        - text: "そして——ついに見つけた。"
+          text_position: "top-right"
+          balloon_shape: "長方形"
+      camera_angle: "wide shot"
