@@ -116,11 +116,9 @@ GEMINI_API_KEY=your-api-key-here
   - 「1カット = だいたい1コマで表現できるまとまり」というイメージです。
   - シーンの切り替え（回想/場面転換）なども、読者が混乱しないように丁寧に挿入されます。
 
-- **できあがるファイル（重要なものだけ）**
-  - 最新版:
-    - `output/cutlist/{story_id}.md`
-  - 履歴（実行のたびに全部残る）:
-    - `output/history/cutlist/{story_id}/{story_id}_cutlist_YYYYMMDD-HHMMSS.md`
+- **できあがるファイル**
+  - `output/cutlist/{story_id}.md`  
+    （既にある場合は上書きされます）
 
 ※ スキルの仕様上、**カットリスト全文はチャットにはベタっと出さず、必ずファイルに保存**されます。
 
@@ -141,10 +139,8 @@ GEMINI_API_KEY=your-api-key-here
   - ここがいわゆる「ネーム」に相当し、**ここで内容を納得するまで直すのがおすすめ**です。
 
 - **できあがるファイル**
-  - 最新版:
-    - `output/storyboard/{story_id}.md`
-  - 履歴:
-    - `output/history/storyboard/{story_id}/{story_id}_storyboard_YYYYMMDD-HHMMSS.md`
+  - `output/storyboard/{story_id}.md`  
+    （既にある場合は上書きされます）
 
 ※ ここでも、**本文はファイルに保存され、チャットにはサマリーだけ**が返るようになっています。
 
@@ -171,14 +167,10 @@ GEMINI_API_KEY=your-api-key-here
       が詰め込まれます。
 
 - **できあがるファイル**
-  - 最新版（後で `manga_generator.py` が読むファイル）:
-    - `output/art_prompts/page_01.yaml`
-    - `output/art_prompts/page_02.yaml`
-    - …
-  - 履歴:
-    - `output/history/art_prompts/{story_id}/page_01_YYYYMMDD-HHMMSS.yaml`
-    - `output/history/art_prompts/{story_id}/page_02_YYYYMMDD-HHMMSS.yaml`
-    - …
+  - `output/art_prompts/page_01.yaml`
+  - `output/art_prompts/page_02.yaml`
+  - …  
+    （後で `manga_generator.py` が読むファイル。既にある場合は上書きされます）
 
 ---
 
@@ -199,13 +191,10 @@ GEMINI_API_KEY=your-api-key-here
   - これが、あとで `panel_renderer.py` が読む「設計図」になります。
 
 - **できあがるファイル**
-  - 最新版（後で `panel_renderer.py` が読むファイル）:
-    - `output/panel_layouts/layout_page_01.yaml`
-    - `output/panel_layouts/layout_page_02.yaml`
-    - …
-  - 履歴:
-    - `output/history/panel_layouts/{story_id}/layout_page_01_YYYYMMDD-HHMMSS.yaml`
-    - …
+  - `output/panel_layouts/layout_page_01.yaml`
+  - `output/panel_layouts/layout_page_02.yaml`
+  - …  
+    （後で `panel_renderer.py` が読むファイル。既にある場合は上書きされます）
 
 ---
 
@@ -229,10 +218,10 @@ python scripts/panel_renderer.py --dir output/panel_layouts --out output/panel_i
   - 各コマには番号が書かれているので、「ここが1コマ目、ここが2コマ目」というのがひと目で分かります。
 
 - **できあがるファイル**
-  - 例：
-    - `output/panel_images/layout_page_01.png`
-    - `output/panel_images/layout_page_02.png`
-    - …
+  - `output/panel_images/layout_page_01.png`
+  - `output/panel_images/layout_page_02.png`
+  - …  
+    （既にある場合は上書きされます）
 
 ---
 
@@ -330,13 +319,12 @@ manga_skill/
 │   └── characters/          # キャラ参照画像の置き場所
 │
 ├── output/
-│   ├── cutlist/             # 最新版カットリスト
-│   ├── storyboard/          # 最新版字コンテ
-│   ├── art_prompts/         # 最新版 作画用プロンプトYAML
-│   ├── panel_layouts/       # 最新版 コマ割りYAML
+│   ├── cutlist/             # カットリスト
+│   ├── storyboard/          # 字コンテ
+│   ├── art_prompts/         # 作画用プロンプトYAML
+│   ├── panel_layouts/       # コマ割りYAML
 │   ├── panel_images/        # コマ割り参照画像（PNG）
-│   ├── manga_pages/         # 完成した漫画ページ（PNG）
-│   └── history/             # すべての中間成果物の履歴（やり直し用）
+│   └── manga_pages/         # 完成した漫画ページ（PNG）
 │
 └── README.md
 ```

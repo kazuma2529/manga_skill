@@ -202,3 +202,9 @@ YAMLの構造は `references/yaml_template.yaml` を参照すること。
 - Cursorのファイル書き込み機能を用いて、上記パスにYAMLファイルを書き込むこと。
 - 既存ファイルとパスが衝突しないよう、`run_id` により一意性を担保する。
 
+## このバージョンでの保存ポリシー
+
+- `output/history` 配下には新しいファイルやディレクトリを一切作成しないこと。
+- コマ割りYAMLの保存先は常に `output/panel_layouts/layout_page_{NN}.yaml`（`NN` は2桁ゼロ埋め）とする。
+- 同じページ番号で再実行した場合は、対応する `layout_page_{NN}.yaml` をそのまま上書き保存する。
+
