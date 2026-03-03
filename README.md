@@ -26,7 +26,7 @@
    → コマ割りYAMLから、「コマ割りだけ描いた白黒の参照画像（PNG）」を作る
 7. `manga_generator.py`（Gemini API）  
    → キャラ画像 + コマ割り画像 + 作画プロンプトYAML から  
-      **完成した漫画ページ画像（PNG）** を作る
+    **完成した漫画ページ画像（PNG）** を作る
 
 図にすると、次のような流れです。
 
@@ -112,7 +112,7 @@ GEMINI_API_KEY=your-api-key-here
     - どんな場面があるか
     - 誰がしゃべるか
     - どんな順番で見せるか  
-    を、**「カット」という単位**で細かく分けていきます。
+      を、**「カット」という単位**で細かく分けていきます。
   - 「1カット = だいたい1コマで表現できるまとまり」というイメージです。
   - シーンの切り替え（回想/場面転換）なども、読者が混乱しないように丁寧に挿入されます。
 
@@ -168,7 +168,7 @@ GEMINI_API_KEY=your-api-key-here
     - どんな画風か（例: “japanese shoujo manga”）
     - 縦書き／右から左に読む
     - 各コマの説明・キャラの感情・セリフ  
-    が詰め込まれます。
+      が詰め込まれます。
 
 - **できあがるファイル**
   - 最新版（後で `manga_generator.py` が読むファイル）:
@@ -225,7 +225,7 @@ python scripts/panel_renderer.py --dir output/panel_layouts --out output/panel_i
     - ページサイズ（1000×1500ピクセル）
     - 6×6 のグリッド
     - margin / gutter（余白やコマの間のすき間）  
-    を使って、**黒い枠線だけの「コマ割り参照画像」**を描きます。
+      を使って、**黒い枠線だけの「コマ割り参照画像」**を描きます。
   - 各コマには番号が書かれているので、「ここが1コマ目、ここが2コマ目」というのがひと目で分かります。
 
 - **できあがるファイル**
@@ -268,7 +268,7 @@ python scripts/manga_generator.py \
     - 「このキャラの見た目」
     - 「このコマ割りのレイアウト」
     - 「この内容・セリフ」  
-    に従った **漫画ページ画像1枚** を生成してもらう。
+      に従った **漫画ページ画像1枚** を生成してもらう。
   - 戻ってきた画像データを `output/manga_pages/manga_page_01.png` に保存する。
 
 ---
@@ -290,7 +290,7 @@ python scripts/manga_generator.py \
     - `output/manga_pages/manga_page_01.png`
     - `output/manga_pages/manga_page_02.png`
     - …  
-    のようなファイルとして保存する。
+      のようなファイルとして保存する。
   - ページとページの間には、`--delay` で指定した秒数だけ待つ（デフォルト2秒）。
 
 - **オプション**
@@ -299,6 +299,14 @@ python scripts/manga_generator.py \
     他の対応モデルを試したいときはここを変えます。
   - `--delay`  
     一括処理で API を叩く間隔（秒）。デフォルトは `2.0`。
+
+---
+
+### 一括実行させたい場合
+
+@manga-pipeline  
+input/text/story_ikuma.md のテキストから漫画を作ってください。
+キャラ画像: input/characters/character.png
 
 ---
 
